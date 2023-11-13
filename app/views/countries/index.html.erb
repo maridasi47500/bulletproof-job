@@ -2,13 +2,18 @@
 
 <h1>Countries</h1>
 
-<div id="countries">
-  <% @countries.each do |country| %>
-    <%= render country %>
-    <p>
-      <%= link_to "Show this country", country %>
-    </p>
-  <% end %>
-</div>
+<div class="row row-cols-1 row-cols-md-3 g-4">
+
+
+       <% @countries.each do |city| %>
+                      <div class="col">
+                                               <%=link_to city do%>
+                                                                                      <div class="card">
+                                                                                        <%=city.name%>
+                                                                                                                                                                                  </div>
+                                                                                                                                                                                                                     <%end%>
+                                                                                                                                                                                                                                  </div>
+                                                                                                                                                                                                                                                 <% end %>
+                                                                                                                                                                                                                                                  </div>
 
 <%= link_to "New country", new_country_path %>

@@ -10,30 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_11_08_135624) do
-  create_table "abdos", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "exercise_id"
-    t.integer "nb"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "cardios", force: :cascade do |t|
-    t.integer "exercise_id"
-    t.time "duree"
-    t.integer "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "cats", force: :cascade do |t|
-    t.string "name"
-    t.string "url"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
+ActiveRecord::Schema[7.0].define(version: 2023_11_08_140843) do
   create_table "cities", force: :cascade do |t|
     t.string "name"
     t.string "image"
@@ -50,10 +27,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_11_08_135624) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "exercises", force: :cascade do |t|
+  create_table "countries", force: :cascade do |t|
     t.string "name"
-    t.string "image"
-    t.string "mytype"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -81,16 +56,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_11_08_135624) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "soldiers", force: :cascade do |t|
-    t.string "name"
-    t.string "image"
-    t.integer "user_id"
-    t.integer "galon_id"
-    t.date "dateofbirth"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "userhavejobs", force: :cascade do |t|
     t.integer "user_id"
     t.integer "job_id"
@@ -100,6 +65,10 @@ ActiveRecord::Schema[7.0].define(version: 2023_11_08_135624) do
 
   create_table "users", force: :cascade do |t|
     t.string "username", default: "", null: false
+    t.string "image"
+    t.integer "city_id"
+    t.integer "country_id"
+    t.integer "galon_id"
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
@@ -109,14 +78,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_11_08_135624) do
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
-  end
-
-  create_table "weapons", force: :cascade do |t|
-    t.integer "city_id"
-    t.string "name"
-    t.string "image"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
 end

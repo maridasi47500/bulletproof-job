@@ -61,3 +61,25 @@ nav a, nav a.nav-link, nav a.nav-link.active {
 						    background:black;
 						    color:white;
 					    }
+					    .myuser img {
+						        width: 30px;
+							    height: 30px;
+							        border-radius: 333333px;
+							}
+							.myuser * {
+								    float: left;
+								        display: inline;
+								}
+								.myuser {
+									    display: inline-flex;
+									        border: 1px solid white;
+										    height: 31px;
+										        border-radius: 888888888px;
+											font-size:18px;
+										}
+										a.navbar-brand {
+											    color: white;
+										    }
+										    .mycard.comment p{
+											    color:#ffd5a8;
+										    }

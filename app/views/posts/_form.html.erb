@@ -18,17 +18,13 @@
 
   <div>
     <%= form.label :content, style: "display: block" %>
-    <%= form.text_field :content %>
+    <%= form.text_area :content %>
   </div>
 
   <div>
     <%= form.hidden_field :user_id %>
   </div>
 
-  <div>
-    <%= form.label :cat_id, style: "display: block" %>
-    <%= form.select :cat_id, options_for_select(Cat.all.collect{|h|[h.name,h.id]}) %>
-  </div>
 
   <div>
     <%= form.submit %>

@@ -11,7 +11,6 @@ window.onload=function(){
  // When the user clicks on the button, open the modal
  btn.onclick = function() {
    modal.style.display = "block";
-	 if(document.getElementById("Map").innerHTML == ""){init();}
    }
 
    // When the user clicks on <span> (x), close the modal

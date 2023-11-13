@@ -10,26 +10,26 @@
       </ul>
     </div>
   <% end %>
-
   <div>
-    <%= form.label :email, style: "display: block" %>
-    <%= form.text_field :email %>
+    <%= form.label :username, style: "display: block" %>
+    <%= form.text_field :username, required: true %>
   </div>
 
   <div>
-    <%= form.label :post_id, style: "display: block" %>
-    <%= form.number_field :post_id %>
+    <%= form.label :email, style: "display: block" %>
+    <%= form.text_field :email,required: true %>
+  </div>
+
+  <div>
+    <%= form.hidden_field :post_id %>
   </div>
 
   <div>
     <%= form.label :content, style: "display: block" %>
-    <%= form.text_area :content %>
+    <%= form.text_area :content, required: true %>
   </div>
 
-  <div>
-    <%= form.label :username, style: "display: block" %>
-    <%= form.text_field :username %>
-  </div>
+
 
   <div>
     <%= form.submit %>

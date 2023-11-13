@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   resources :comments
   get "my-posts/:title", to: "cats#showcat", as: :mycat
   resources :posts
-  devise_for :users, controllers: { sessions: 'users/sessions', registrations: 'users/registrations' }
+  devise_for :users, controllers: { registrations: 'users/registrations', sessions: 'users/sessions'}, path: 'auth', path_names: { sign_in: 'login', sign_out: 'logout', password: 'secret', confirmation: 'verification', unlock: 'unblock', registration: 'register', sign_up: 'cmon_let_me_in' }
   get 'bycar/index'
   get 'boat/page1'
   root 'welcome#index'

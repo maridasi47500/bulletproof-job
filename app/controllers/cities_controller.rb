@@ -9,7 +9,6 @@ class CitiesController < ApplicationController
   # GET /cities/1 or /cities/1.json
   def show
     @mypicbody="background-image: url('/uploads/#{@city.image}');background-size: 100% 100%;"
-    @weapon=Weapon.new(city_id: @city.id)
   end
 
   # GET /cities/new
@@ -27,7 +26,7 @@ class CitiesController < ApplicationController
 
     respond_to do |format|
       if @city.save
-        format.html { redirect_to city_url(@city), notice: "City was successfully created." }
+        format.html { redirect_to cities_url, notice: "City was successfully created." }
         format.json { render :show, status: :created, location: @city }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -40,7 +39,7 @@ class CitiesController < ApplicationController
   def update
     respond_to do |format|
       if @city.update(city_params)
-        format.html { redirect_to city_url(@city), notice: "City was successfully updated." }
+        format.html { redirect_to cities_url, notice: "City was successfully updated." }
         format.json { render :show, status: :ok, location: @city }
       else
         format.html { render :edit, status: :unprocessable_entity }

@@ -4,13 +4,43 @@
   <%= render "users/shared/error_messages", resource: resource %>
 
   <div class="field">
+    <%= f.label :username %><br />
+    <%= f.text_field :username, autofocus: true, autocomplete: "username" %>
+  </div>
+  <div class="field">
+    <%= f.hidden_field :image%>
+    <%= f.label :image %><br />
+    <%= f.file_field :image, autofocus: true, autocomplete: "image" %>
+  </div>
+  <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
   </div>
+    <div class="field">
+          <%= f.label :country_id %><br />
+              <%= f.select :country_id, Country.all.collect {|h|[h.name, h.id]} %>
+                </div>
+                  <div class="field">
+                        <%= f.label :city_id %><br />
+                            <%= f.select :city_id, City.all.collect {|h|[h.name, h.id]} %>
+                              </div>
+                                <div>
+                                      <%= f.label :galon_id, style: "display: block" %>
+                                          <%= f.select :galon_id, options_for_select(Galon.all.collect{|x|[x.name, x.id, :'data-class' => 'avatar', :'data-style' => "background-image: url('/assets/#{x.image}');background-size:100% 100%;"]}), {}, {id: "CarId2"} %>
+                                            </div>
+                                <div class="field">
+                                      <%= f.label :job_ids %><br />
+                                          <%= f.collection_check_boxes(:job_ids,Job.all,:id, :name) do |b|  %>
+                                                  <div>
+                                                            <%=b.label do%>
+                                                                        <%=b.check_box%>
 
-  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-  <% end %>
+                                                                                  <%=b.text%>
+                                                                                          <%end%>
+                                                                                                </div>
+                                                                                                    <%end%>
+                                                                                                      </div>
+
 
   <div class="field">
     <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />

@@ -5,9 +5,14 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
-Cat.destroy_all
-Cat.create(name: "blab")
+Country.destroy_all
+Country.find_or_create_by(name: "France")
+City.destroy_all
+City.find_or_create_by(name: "Paris")
 Job.destroy_all
 Job.find_or_create_by(name: "musician")
 Job.find_or_create_by(name: "cellule informatique")
 Job.find_or_create_by(name: "soldier")
+Job.find_or_create_by(name: "officier de la communication")
+Job.find_or_create_by(name: "agent de la sécurité")
+Job.find_or_create_by(name: "métier de la terre")
